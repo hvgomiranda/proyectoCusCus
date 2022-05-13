@@ -1,0 +1,25 @@
+{
+  "name": "proyectocuscus",
+  "version": "1.0.0",
+  "description": "ProyectoCusCus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/main.scss css/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hvgomiranda/proyectoCusCus.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hvgomiranda/proyectoCusCus/issues"
+  },
+  "homepage": "https://github.com/hvgomiranda/proyectoCusCus#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.16"
+  }
+}
