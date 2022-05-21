@@ -1,6 +1,6 @@
 //cambiar el color del logo y los íconos al abrir el menú
 let logo = document.querySelector(".logoSVG");
-let menu = document.querySelector("#menuToggle");
+let menu = document.querySelector("#menuToggle input");
 let colorCambiado = 1;
 menu.addEventListener("click", cambiarColor);
 function cambiarColor()

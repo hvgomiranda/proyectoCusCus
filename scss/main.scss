@@ -1,7 +1,6 @@
 $mainColor: rgb(123, 154, 87);
-$secondaryColor: rgb(255,201,14); //buscar color secundario
+$secondaryColor: #ffc90e;
 $whiteColor: white;
-$titleFont: 'Kalam', cursive; //buscar tipografías ideales
 $mainFont: 'Open Sans', sans-serif;
 *
 {
@@ -18,18 +17,20 @@ $mainFont: 'Open Sans', sans-serif;
     grid-template-rows: 10vh 10vh repeat(10, 1fr);
     height: 100vh;
     overflow-y: hidden;
-    overflow-x: hidden;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
     //header
     .header
     {
         grid-column: 1 / 13;
         grid-row: 1 / 3;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr;
+
+        nav
+        {
+            grid-column: 1 / 2;
+            justify-self: center;
+        }
 
         //empieza el menú
         #menuToggle
@@ -49,7 +50,6 @@ $mainFont: 'Open Sans', sans-serif;
         {
             text-decoration: none;
             color: $whiteColor;
-            font-family: $mainFont;
             transition: color 0.3s ease;
         }
 
@@ -90,9 +90,9 @@ $mainFont: 'Open Sans', sans-serif;
             
             transform-origin: 4px 0px;
             
-            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                        opacity 0.55s ease;
+            transition: transform 0.1s cubic-bezier(0.77,0.2,0.05,1.0),
+                        background 0.1s cubic-bezier(0.77,0.2,0.05,1.0),
+                        opacity 0.1s ease;
         }
 
         #menuToggle span:first-child
@@ -129,7 +129,7 @@ $mainFont: 'Open Sans', sans-serif;
             width: 120vw;
             height: 150vh;
             margin: -100px 0px 0px -50px;
-            padding: 50px;
+            padding-left: 50px;
             padding-top: 125px;
             
             background: $mainColor;
@@ -146,25 +146,38 @@ $mainFont: 'Open Sans', sans-serif;
         {
             padding: 15px 0;
             font-size: 1.7rem;
+            font-family: $mainFont;
+            color: $whiteColor;
         }
         #menuToggle input:checked ~ ul
         {
             transform: none;
         }
         //termina el menú
-
+        
         &__logo
         {
-            z-index: 100;
+            grid-column: 5 / 9;
+            z-index: 1;
             align-self: center;
+            justify-self: center;
+            width: 150px;
+            height: 100px;
+            
             img
             {
-                width: 25vw;
+                width: 100%;
+                height: 100%;
             }
 
             .logoSVG
             {
+
                 filter: invert(56%) sepia(19%) saturate(809%) hue-rotate(45deg) brightness(97%) contrast(91%);
+                &:hover
+                {
+                    filter: invert(90%) sepia(22%) saturate(4879%) hue-rotate(349deg) brightness(102%) contrast(101%);
+                }
             }
         }
     }
@@ -173,10 +186,6 @@ $mainFont: 'Open Sans', sans-serif;
     {
         grid-column: 1 / 13;
         grid-row: 1 / 13;
-        &__fondo
-        {
-            
-        }
     }
 
     .footer
@@ -193,9 +202,98 @@ $mainFont: 'Open Sans', sans-serif;
             text-decoration: none;
             color: $mainColor;
             padding: 10px;
+            &:hover
+            {
+                color: $secondaryColor;
+            }
         }
     }
 
+    ::-moz-selection 
+    { 
+        color: $secondaryColor;
+        background: transparent;
+    }
+    
+    ::selection 
+    {
+        color: $secondaryColor;
+        background: transparent;
+    }
 
 }
+
+//Comienza Menú
+
+//Termina Menú
+
+//Comienza Acciones Sustentables
+
+//Termina Acciones Sustentables
+
+//Comienza Quienes somos
+
+.principalQuienesSomos
+{
+    grid-column: 1 / 13;
+    grid-row: 3 / 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    background-color: $mainColor;
+    border-top: 4px solid $secondaryColor;
+    border-bottom: 4px solid $secondaryColor;
+
+    .contenedorImagenPerfil
+    {
+        grid-column: 2 / 7;
+        grid-row: 2 / 6;
+        justify-self: center;
+
+        img
+        {
+            border-radius: 50%;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .nombresEquipo
+    {
+        grid-column: 8 / 13;
+        grid-row: 2 / 6;
+        align-self: center;
+        justify-self: center;
+        font-family: $mainFont;
+        color: $secondaryColor;
+        
+    }
+
+    .bioEquipo
+    {
+        grid-column: 2 / 12;
+        grid-row: 6 / 9;
+        margin-top: 20px;
+        text-align: center;
+        font-family: $mainFont;
+        color: $whiteColor;
+        font-size: 0.95rem;
+    }
+
+}
+
+//Termina Quienes somos
+
+//Comienza Contactanos
+.principalContactanos
+{
+    grid-column: 1 / 13;
+    grid-row: 3 / 12;
+    background-color: $mainColor;
+}
+//Termina Contactanos
+
+
+
 //npm run watch-css
