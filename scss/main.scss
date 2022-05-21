@@ -1,8 +1,8 @@
-$mainColor: rgb(123,154,87);
-$secondaryColor: rgb(207,192,87); //buscar color secundario
+$mainColor: rgb(123, 154, 87);
+$secondaryColor: rgb(255,201,14); //buscar color secundario
 $whiteColor: white;
 $titleFont: 'Kalam', cursive; //buscar tipografías ideales
-$mainFont: 'Cinzel', serif;
+$mainFont: 'Open Sans', sans-serif;
 *
 {
     margin: 0;
@@ -12,35 +12,190 @@ $mainFont: 'Cinzel', serif;
 
 .general
 {
-    background-color: $mainColor;
+    background-color: $whiteColor;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 10vh 10vh repeat(10, 1fr);
     height: 100vh;
-    align-content: center;
-    justify-content: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     //header
     .header
     {
         grid-column: 1 / 13;
-        grid-row: 1 / 4;
+        grid-row: 1 / 3;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
 
-        &__logo
+        //empieza el menú
+        #menuToggle
         {
-            width: 30vw;
+            display: block;
+            position: relative;
+            top: 50px;
+            left: 20px;
+
+            z-index: 1;
+            
+            -webkit-user-select: none;
+            user-select: none;
         }
 
-        &__menu
+        #menuToggle a
         {
-            width: 10vw;
+            text-decoration: none;
             color: $whiteColor;
-            margin-right: 2vw;
+            font-family: $mainFont;
+            transition: color 0.3s ease;
+        }
+
+        #menuToggle a:hover
+        {
+            color: $secondaryColor;
+        }
+
+        #menuToggle input
+        {
+            display: block;
+            width: 40px;
+            height: 32px;
+            position: absolute;
+            top: -7px;
+            left: -5px;
+            
+            cursor: pointer;
+            
+            opacity: 0;
+            z-index: 2;
+            
+            -webkit-touch-callout: none;
+        }
+
+        #menuToggle span
+        {
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+            
+            background: $mainColor;
+            border-radius: 3px;
+            
+            z-index: 1;
+            
+            transform-origin: 4px 0px;
+            
+            transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                        opacity 0.55s ease;
+        }
+
+        #menuToggle span:first-child
+        {
+            transform-origin: 0% 0%;
+        }
+
+        #menuToggle span:nth-last-child(2)
+        {
+            transform-origin: 0% 100%;
+        }
+
+        #menuToggle input:checked ~ span
+        {
+            opacity: 1;
+            transform: rotate(45deg) translate(-2px, -1px);
+            background: $whiteColor;
+        }
+
+        #menuToggle input:checked ~ span:nth-last-child(3)
+        {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+
+        #menuToggle input:checked ~ span:nth-last-child(2)
+        {
+            transform: rotate(-45deg) translate(0, -1px);
+        }
+
+        #menu
+        {
+            position: absolute;
+            width: 120vw;
+            height: 150vh;
+            margin: -100px 0px 0px -50px;
+            padding: 50px;
+            padding-top: 125px;
+            
+            background: $mainColor;
+            list-style-type: none;
+            -webkit-font-smoothing: antialiased;
+            
+            transform-origin: 0% 0%;
+            transform: translate(-100%, 0);
+            
+            transition: transform 0s cubic-bezier(0.77,0.2,0.05,1.0);
+        }
+
+        #menu li
+        {
+            padding: 15px 0;
+            font-size: 1.7rem;
+        }
+        #menuToggle input:checked ~ ul
+        {
+            transform: none;
+        }
+        //termina el menú
+
+        &__logo
+        {
+            z-index: 100;
+            align-self: center;
+            img
+            {
+                width: 25vw;
+            }
+
+            .logoSVG
+            {
+                filter: invert(56%) sepia(19%) saturate(809%) hue-rotate(45deg) brightness(97%) contrast(91%);
+            }
         }
     }
+
+    .principal
+    {
+        grid-column: 1 / 13;
+        grid-row: 1 / 13;
+        &__fondo
+        {
+            
+        }
+    }
+
+    .footer
+    {
+        z-index: 100;
+        grid-column: 1 / 13;
+        grid-row: 12 / 13;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .fa
+        {
+            text-decoration: none;
+            color: $mainColor;
+            padding: 10px;
+        }
+    }
+
 
 }
 //npm run watch-css
