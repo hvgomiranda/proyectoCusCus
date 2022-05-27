@@ -234,6 +234,48 @@ $mainFont: 'Open Sans', sans-serif;
 
 //Comienza Menú
 
+.principalMenu
+{
+    grid-column: 1 / 13;
+    grid-row: 3 / 12;
+    display: flex;
+    flex-direction: column;
+    background-color: $mainColor;
+    //border-top: 4px solid $secondaryColor;
+    //border-bottom: 4px solid $secondaryColor;
+
+    .menuTitulo
+    {
+       // justify-content: space-between;
+        //align-content: center;
+
+        .menuTextoTitulo{
+            align-self: center;
+            text-align: center;
+            font-family: $mainFont;
+            color: $secondaryColor;
+            font-size: 1.5rem;
+        }
+    }
+
+    .menuCuerpo
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: auto;
+        justify-content: space-around;
+
+        .menuImagen
+        {
+            margin-top: 20px;
+
+            img{
+                width: 300px;
+            }
+        }
+    }
+}
 //Termina Menú
 
 //Comienza Acciones Sustentables
