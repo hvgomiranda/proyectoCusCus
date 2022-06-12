@@ -1,7 +1,7 @@
 //npm run watch-css
-$mainColor: rgb(123, 154, 87);
+$mainColor: #7b9a57;
 $secondaryColor: #ffc90e;
-$whiteColor: white;
+$whiteColor: #f5f5dc;
 $mainFont: 'Open Sans', sans-serif;
 *
 {
@@ -15,7 +15,7 @@ $mainFont: 'Open Sans', sans-serif;
     background-color: $whiteColor;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 10vh 10vh repeat(9, 1fr) 10vh;
+    grid-template-rows: repeat(2, 10vh) repeat(9, 1fr) 10vh;
     //header
     .header
     {
@@ -24,8 +24,7 @@ $mainFont: 'Open Sans', sans-serif;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: 1fr;
-        border-bottom: 4px solid $secondaryColor;
-
+        border-bottom: 8px solid $secondaryColor;
         nav
         {
             grid-column: 1 / 2;
@@ -55,7 +54,7 @@ $mainFont: 'Open Sans', sans-serif;
 
         #menuToggle a:hover
         {
-            color: $secondaryColor;
+            color: $secondaryColor !important;
         }
 
         #menuToggle input
@@ -127,7 +126,7 @@ $mainFont: 'Open Sans', sans-serif;
         {
             position: absolute;
             width: 200vw;
-            height: 100vh;
+            height: 105vh;
             margin: -100px 0px 0px -50px;
             padding-left: 50px;
             padding-top: 20vh;
@@ -138,7 +137,7 @@ $mainFont: 'Open Sans', sans-serif;
             transform-origin: 0% 0%;
             transform: translate(-100%, 0);
             
-            transition: transform 0s cubic-bezier(0.77,0.2,0.05,1.0);
+            transition: transform 0.4s cubic-bezier(0.77,0.2,0.05,1.0);
         }
 
         #menu li
@@ -171,7 +170,7 @@ $mainFont: 'Open Sans', sans-serif;
 
             .logoSVG
             {
-
+                transition: 0.4s;
                 filter: invert(56%) sepia(19%) saturate(809%) hue-rotate(45deg) brightness(97%) contrast(91%);
                 
                 /*&:hover
@@ -182,41 +181,339 @@ $mainFont: 'Open Sans', sans-serif;
         }
     }
 
+    //Comienza Home
     .principal
     {
         grid-column: 1 / 13;
         grid-row: 3 / 12;
-        img
+        height: 70vh;
+        display: grid;
+        grid-template-columns: repeat(10, 10vw);
+        grid-template-rows: repeat(10, 1fr);
+        &__fondo
         {
-            z-index: -1;
-            height: 100%;
-            width: 100%;
-            object-fit: fill;
+            grid-column: 1 / 10;
+            grid-row: 1 / 10;
+            position: absolute;
+            img
+            {
+                z-index: -1;
+                height: 70vh;
+                width: 100vw;
+                object-fit: cover;
+            }
         }
-        
-    }
+        &__texto
+        {
+            grid-column: 2 / 10;
+            grid-row: 8 / 10;
+            align-self: center;
+            justify-self: center;
+            //border: 1px solid $secondaryColor;
+            border-radius: 5px;
+            width: 100%;
+            backdrop-filter: blur(1.5px);
+            background-color: $whiteColor;
+            padding: 10px;
+            h1
+            {
+                font-family: $mainFont;
+                color: $mainColor;
+                font-size: 2rem;
+                text-align: center;
+            }
+            h2
+            {
+                font-family: $mainFont;
+                color: $mainColor;
+                font-size: 1rem;
+                text-align: center;
+            }
+        }
+        .botones
+        {
+            grid-column: 2 / 10;
+            grid-row: 10 / 11;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            margin: 15px 0px;
+            height: 50%;
+            width: 100%;
+            
+            button
+            {
+                border-radius: 5px;
+                border: 0px solid $secondaryColor; 
+                font-family: $mainFont;
+                backdrop-filter: blur(1.5px);
+                background-color: $whiteColor;
+                font-size: 1rem;
+                width: 45%;
+                line-height: 0.8rem;
+                transition: 0.4s;
+                a
+                {
+                    text-decoration: none;
+                    color: $mainColor;
+                }
 
+            }
+            button:hover
+            {
+                background-color: $mainColor;
+                a
+                {
+                    color: $whiteColor;
+                }
+            }
+        }
+    }
+    //Termina Home
+
+    //Comienza Menú
+    .principalMenu
+    {
+        grid-column: 1 / 13;
+        grid-row: 3 / 12;
+        display: flex;
+        flex-direction: column;
+        background-color: $mainColor;
+        //border-top: 4px solid $secondaryColor;
+        //border-bottom: 4px solid $secondaryColor;
+
+        .menuTitulo
+        {
+        // justify-content: space-between;
+            //align-content: center;
+
+            .menuTextoTitulo{
+                align-self: center;
+                text-align: center;
+                font-family: $mainFont;
+                color: $secondaryColor;
+                font-size: 1.5rem;
+            }
+        }
+
+        .menuCuerpo
+        {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: auto;
+            justify-content: space-around;
+
+            .menuImagen
+            {
+                margin-top: 20px;
+
+                img{
+                    width: 300px;
+                }
+            }
+        }
+    }
+    //Termina Menú
+
+    //Comienza Acciones Sustentables
+    //Termina Acciones Sustentables
+
+    //Comienza Quienes somos
+    .principalQuienesSomos
+    {
+        grid-column: 1 / 13;
+        grid-row: 3 / 12;
+        display: grid;
+        grid-template-columns: repeat(10, 10vw);
+        grid-template-rows: 5vh repeat(2, 10vh) repeat(7, 15vh);
+        background-color: $mainColor;
+        //border-top: 4px solid $secondaryColor;
+        //border-bottom: 4px solid $secondaryColor;
+
+        .bioTitulo
+        {
+            grid-column: 2 / 10;
+            grid-row: 2 / 4;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-content: center;
+
+            .contenedorImagenPerfil
+            {
+                align-self: center;
+                
+        
+                img
+                {
+                    border-radius: 50%;
+                    object-fit: cover;
+                    width: 125px;
+                    height: 125px;
+                }
+            }
+        
+            .nombresEquipo
+            {
+                align-self: center;
+                text-align: right;
+                font-family: $mainFont;
+                color: $secondaryColor;
+                font-size: 1.5rem;
+            }
+        }
+
+        .bioCuerpo
+        {
+            grid-column: 2 / 10;
+            grid-row: 4 / 8;
+            p
+            {
+                margin-top: 25px;
+                text-align: center;
+                font-family: $mainFont;
+                color: $whiteColor;
+                font-size: 0.85rem;
+            }
+        }
+
+        .dondeEstamos
+        {
+            grid-column: 1 / 11;
+            grid-row: 8 / 11;
+            h2
+            {
+                text-align: center;
+                font-family: $mainFont;
+                font-size: 1.5rem;
+                color: $secondaryColor;
+                margin-bottom: 5px;
+            }
+            .mapa
+            {
+                width: 100vw;
+                height: 90%;
+                border: 4px solid $secondaryColor;
+
+            }
+        }
+    }
+    //Termina Quienes somos
+
+    //Comienza Contactanos
+    .principalContactanos
+    {
+        grid-column: 1 / 13;
+        grid-row: 3 / 13;
+        background-color: $mainColor;
+
+        h2
+        {
+            color: $whiteColor;
+            font-family: $mainFont;
+            text-align: center;
+            align-self: center;
+            margin: 10px 0px 20px 0px;
+        }
+        .informacion
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            a
+            {
+                text-decoration: none;
+                color: $whiteColor;
+                transition: 0.4s;
+            }
+            a:hover
+            {
+                color: $secondaryColor;
+            }
+            p
+            {
+                color: $whiteColor;
+                font-family: $mainFont;
+                font-size: 1.2rem;
+            }
+        }
+        .formulario
+        {
+            h2
+            {
+                color: $whiteColor;
+                font-family: $mainFont;
+                text-align: center;
+                align-self: center;
+                margin: 10px 0px 20px 0px;
+            }
+
+            form
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                input
+                {
+                    font-family: $mainFont;
+                    font-size: 0.9rem;
+                    height: 40px;
+                    width: 80vw;
+                    margin-bottom: 10px;
+                    background-color: $whiteColor;
+                    border: 0px;
+                    padding-left: 5px;
+                }
+                textarea
+                {
+                    font-family: $mainFont;
+                    font-size: 0.9rem;
+                    height: 100px;
+                    width: 80vw;
+                    margin-bottom: 10px;
+                    background-color: $whiteColor;
+                    border: 0px;
+                    padding-left: 5px;
+                    padding-top: 5px;
+                }
+
+                .btnSend
+                {
+                    width: 50vw;
+                    padding-left: 0px;
+                }
+            }
+
+
+        }
+    }
+    //Termina Contactanos
+
+    //Comienza el footer
     .footer
     {
-        z-index: 100;
         grid-column: 1 / 13;
         grid-row: 12 / 13;
         display: flex;
         flex-direction: row;
         justify-content: center;
-        border-top: 4px solid $secondaryColor;
-
+        z-index: 2;
+        
         .fa
         {
             text-decoration: none;
             color: $mainColor;
             padding: 10px;
+            transition: 0.4s;
             &:hover
             {
-                color: $secondaryColor;
+                color: $secondaryColor !important;
             }
         }
     }
+    //Termina el footer
 
     ::-moz-selection 
     { 
@@ -229,113 +526,6 @@ $mainFont: 'Open Sans', sans-serif;
         color: $secondaryColor;
         background: transparent;
     }
-
 }
-
-//Comienza Menú
-
-//Termina Menú
-
-//Comienza Acciones Sustentables
-
-//Termina Acciones Sustentables
-
-//Comienza Quienes somos
-
-.principalQuienesSomos
-{
-    grid-column: 1 / 13;
-    grid-row: 3 / 12;
-    display: grid;
-    grid-template-columns: repeat(10, 10vw);
-    grid-template-rows: 5vh repeat(2, 10vh) repeat(7, 15vh);
-    background-color: $mainColor;
-    //border-top: 4px solid $secondaryColor;
-    //border-bottom: 4px solid $secondaryColor;
-
-    .bioTitulo
-    {
-        grid-column: 2 / 10;
-        grid-row: 2 / 4;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-content: center;
-
-        .contenedorImagenPerfil
-        {
-            align-self: center;
-            
-    
-            img
-            {
-                border-radius: 50%;
-                object-fit: cover;
-                width: 125px;
-                height: 125px;
-            }
-        }
-    
-        .nombresEquipo
-        {
-            align-self: center;
-            text-align: right;
-            font-family: $mainFont;
-            color: $secondaryColor;
-            font-size: 1.5rem;
-        }
-    }
-
-    .bioCuerpo
-    {
-        grid-column: 2 / 10;
-        grid-row: 4 / 8;
-        p
-        {
-            margin-top: 25px;
-            text-align: center;
-            font-family: $mainFont;
-            color: $whiteColor;
-            font-size: 0.85rem;
-        }
-    }
-
-    .dondeEstamos
-    {
-        grid-column: 1 / 11;
-        grid-row: 8 / 11;
-        h2
-        {
-            text-align: center;
-            font-family: $mainFont;
-            font-size: 1.5rem;
-            color: $secondaryColor;
-        }
-        .mapa
-        {
-            width: 100vw;
-            height: 90%;
-            border-top: 4px solid $secondaryColor;
-            border-right: 4px solid $secondaryColor;
-            border-left: 4px solid $secondaryColor;
-
-        }
-    }
-
-
-}
-
-//Termina Quienes somos
-
-//Comienza Contactanos
-.principalContactanos
-{
-    grid-column: 1 / 13;
-    grid-row: 3 / 12;
-    background-color: $mainColor;
-}
-
-
-//Termina Contactanos
 
 //media queries
