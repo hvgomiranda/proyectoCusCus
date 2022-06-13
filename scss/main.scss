@@ -317,6 +317,114 @@ $mainFont: 'Open Sans', sans-serif;
     //Termina Menú
 
     //Comienza Acciones Sustentables
+    .principalSustentables
+    {
+        grid-column: 1 / 13;
+        grid-row: 3 / 12;
+        display: flex;
+        flex-direction: column;
+        background-color: $mainColor;
+        
+        .sustentablesTitulo
+        {
+
+            .sustentablesTextoTitulo{
+                align-self: center;
+                text-align: center;
+                font-family: $mainFont;
+                color: $secondaryColor;
+                font-size: 1.5rem;
+            }
+        }
+
+        .sustentablesCuerpo
+        {
+            display: flex;
+            flex-direction: column;
+            width: auto;
+            justify-content: space-around;
+
+            .sustentablesImagen
+            {
+                margin-top: 20px;
+
+                img{
+                    
+                    
+                        height: 50vh;
+                        width: 100%;
+                        margin: auto;
+                    }
+                
+            }
+            .sustentablesCuadro{
+                width: 90%;
+                border:1px ;
+                margin: auto;
+                margin-top: 10px;
+                border-style: solid;
+                border-radius: 5px;
+                border-color:$whiteColor;
+                background-color: $whiteColor;
+                
+                
+                .sustentablesSubtitulo{
+                    align-self: center;
+                    text-align: center;
+                    font-family: $mainFont;
+                    color: $mainColor;
+                    font-size: 1rem;
+                    font-weight:bold;
+                }
+
+                .sustentablesTexto{
+                    align-self: center;
+                    text-align: center;
+                    font-family: $mainFont;
+                    color: $mainColor;
+                    font-size: 1rem;
+                }
+            }
+            .contenedorAcciones{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: 	wrap;
+                width: 90%;
+                justify-content: space-around;
+                margin: auto;
+    
+
+                .sustentablesCuadroChico{
+                    width: 300px;
+                    border:1px ;
+                    border-style: solid;
+                    border-radius: 5px;
+                    border-color:$whiteColor;
+                    margin: 20px;
+
+                    p{
+                        align-self: center;
+                        text-align: center;
+                        font-family: $mainFont;
+                        color: $whiteColor;
+                        font-size: 1rem;
+                    }
+
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            .sustentablesAccionesTitulo{
+                align-self: center;
+                text-align: center;
+                font-family: $mainFont;
+                color: $secondaryColor;
+                font-size: 1.5rem;
+                margin-top: 10px;
+            }
+        }
+    }
     //Termina Acciones Sustentables
 
     //Comienza Quienes somos
