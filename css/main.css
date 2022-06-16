@@ -3,11 +3,16 @@
   padding: 0;
   box-sizing: border-box; }
 
+.fixed {
+  overflow-x: hidden;
+  overflow-y: hidden; }
+
 .general {
-  background-color: #f5f5dc;
+  background-color: #FFF8DC;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(2, 10vh) repeat(9, 1fr) 10vh; }
+  grid-template-rows: repeat(2, 10vh) repeat(9, 1fr) 10vh;
+  height: 100vh; }
   .general .header {
     grid-column: 1 / 13;
     grid-row: 1 / 3;
@@ -28,7 +33,7 @@
       user-select: none; }
     .general .header #menuToggle a {
       text-decoration: none;
-      color: #f5f5dc;
+      color: #FFF8DC;
       transition: color 0.3s ease; }
     .general .header #menuToggle a:hover {
       color: #ffc90e !important; }
@@ -53,7 +58,7 @@
       border-radius: 3px;
       z-index: 1;
       transform-origin: 4px 0px;
-      transition: transform 0.1s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.1s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.1s ease; }
+      transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.4s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.4s ease; }
     .general .header #menuToggle span:first-child {
       transform-origin: 0% 0%; }
     .general .header #menuToggle span:nth-last-child(2) {
@@ -61,7 +66,7 @@
     .general .header #menuToggle input:checked ~ span {
       opacity: 1;
       transform: rotate(45deg) translate(-2px, -1px);
-      background: #f5f5dc; }
+      background: #FFF8DC; }
     .general .header #menuToggle input:checked ~ span:nth-last-child(3) {
       opacity: 0;
       transform: rotate(0deg) scale(0.2, 0.2); }
@@ -70,7 +75,6 @@
     .general .header #menu {
       position: absolute;
       width: 200vw;
-      height: 105vh;
       margin: -100px 0px 0px -50px;
       padding-left: 50px;
       padding-top: 20vh;
@@ -84,7 +88,7 @@
       padding: 15px 0;
       font-size: 1.7rem;
       font-family: "Open Sans", sans-serif;
-      color: #f5f5dc; }
+      color: #FFF8DC; }
     .general .header #menuToggle input:checked ~ ul {
       transform: none; }
     .general .header__logo {
@@ -128,7 +132,7 @@
       border-radius: 5px;
       width: 100%;
       backdrop-filter: blur(1.5px);
-      background-color: #f5f5dc;
+      background-color: #FFF8DC;
       padding: 10px; }
       .general .principal__texto h1 {
         font-family: "Open Sans", sans-serif;
@@ -140,6 +144,21 @@
         color: #7b9a57;
         font-size: 1rem;
         text-align: center; }
+    .general .principal .fade-in {
+      -webkit-animation: fade-in 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+      animation: fade-in 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
     .general .principal .botones {
       grid-column: 2 / 10;
       grid-row: 10 / 11;
@@ -154,7 +173,7 @@
         border: 0px solid #ffc90e;
         font-family: "Open Sans", sans-serif;
         backdrop-filter: blur(1.5px);
-        background-color: #f5f5dc;
+        background-color: #FFF8DC;
         font-size: 1rem;
         width: 45%;
         line-height: 0.8rem;
@@ -163,9 +182,10 @@
           text-decoration: none;
           color: #7b9a57; }
       .general .principal .botones button:hover {
-        background-color: #7b9a57; }
+        background-color: #7b9a57;
+        border: 2px solid #FFF8DC; }
         .general .principal .botones button:hover a {
-          color: #f5f5dc; }
+          color: #FFF8DC; }
   .general .principalMenu {
     grid-column: 1 / 13;
     grid-row: 3 / 12;
@@ -188,12 +208,86 @@
         margin-top: 20px; }
         .general .principalMenu .menuCuerpo .menuImagen img {
           width: 300px; }
+  .general .principalSustentables {
+    grid-column: 1 / 13;
+    grid-row: 3 / 12;
+    display: flex;
+    flex-direction: column;
+    background-color: #7b9a57; }
+    .general .principalSustentables .sustentablesTitulo .sustentablesTextoTitulo {
+      align-self: center;
+      text-align: center;
+      font-family: "Open Sans", sans-serif;
+      color: #ffc90e;
+      font-size: 1.5rem; }
+    .general .principalSustentables .sustentablesCuerpo {
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      justify-content: space-around; }
+      .general .principalSustentables .sustentablesCuerpo .sustentablesImagen {
+        margin-top: 20px; }
+        .general .principalSustentables .sustentablesCuerpo .sustentablesImagen img {
+          height: 50vh;
+          width: 100%;
+          margin: auto; }
+      .general .principalSustentables .sustentablesCuerpo .sustentablesCuadro {
+        width: 90%;
+        border: 1px;
+        margin: auto;
+        margin-top: 10px;
+        border-style: solid;
+        border-radius: 5px;
+        border-color: #FFF8DC;
+        background-color: #FFF8DC; }
+        .general .principalSustentables .sustentablesCuerpo .sustentablesCuadro .sustentablesSubtitulo {
+          align-self: center;
+          text-align: center;
+          font-family: "Open Sans", sans-serif;
+          color: #7b9a57;
+          font-size: 1rem;
+          font-weight: bold; }
+        .general .principalSustentables .sustentablesCuerpo .sustentablesCuadro .sustentablesTexto {
+          align-self: center;
+          text-align: center;
+          font-family: "Open Sans", sans-serif;
+          color: #7b9a57;
+          font-size: 1rem; }
+      .general .principalSustentables .sustentablesCuerpo .contenedorAcciones {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 90%;
+        justify-content: space-around;
+        margin: auto; }
+        .general .principalSustentables .sustentablesCuerpo .contenedorAcciones .sustentablesCuadroChico {
+          width: 300px;
+          border: 1px;
+          border-style: solid;
+          border-radius: 5px;
+          border-color: #FFF8DC;
+          margin: 20px; }
+          .general .principalSustentables .sustentablesCuerpo .contenedorAcciones .sustentablesCuadroChico p {
+            align-self: center;
+            text-align: center;
+            font-family: "Open Sans", sans-serif;
+            color: #FFF8DC;
+            font-size: 1rem; }
+          .general .principalSustentables .sustentablesCuerpo .contenedorAcciones .sustentablesCuadroChico img {
+            width: 100%; }
+      .general .principalSustentables .sustentablesCuerpo .sustentablesAccionesTitulo {
+        align-self: center;
+        text-align: center;
+        font-family: "Open Sans", sans-serif;
+        color: #ffc90e;
+        font-size: 1.5rem;
+        margin-top: 10px; }
   .general .principalQuienesSomos {
     grid-column: 1 / 13;
     grid-row: 3 / 12;
     display: grid;
     grid-template-columns: repeat(10, 10vw);
-    grid-template-rows: 5vh repeat(2, 10vh) repeat(7, 15vh);
+    grid-template-rows: 5vh repeat(2, 10vh) repeat(4, 15vh);
     background-color: #7b9a57; }
     .general .principalQuienesSomos .bioTitulo {
       grid-column: 2 / 10;
@@ -222,7 +316,7 @@
         margin-top: 25px;
         text-align: center;
         font-family: "Open Sans", sans-serif;
-        color: #f5f5dc;
+        color: #FFF8DC;
         font-size: 0.85rem; }
     .general .principalQuienesSomos .dondeEstamos {
       grid-column: 1 / 11;
@@ -239,10 +333,12 @@
         border: 4px solid #ffc90e; }
   .general .principalContactanos {
     grid-column: 1 / 13;
-    grid-row: 3 / 13;
-    background-color: #7b9a57; }
+    background-color: #7b9a57;
+    display: flex;
+    flex-direction: column;
+    align-content: center; }
     .general .principalContactanos h2 {
-      color: #f5f5dc;
+      color: #FFF8DC;
       font-family: "Open Sans", sans-serif;
       text-align: center;
       align-self: center;
@@ -254,20 +350,23 @@
       margin-bottom: 20px; }
       .general .principalContactanos .informacion a {
         text-decoration: none;
-        color: #f5f5dc;
+        color: #FFF8DC;
         transition: 0.4s; }
       .general .principalContactanos .informacion a:hover {
         color: #ffc90e; }
       .general .principalContactanos .informacion p {
-        color: #f5f5dc;
+        color: #FFF8DC;
         font-family: "Open Sans", sans-serif;
         font-size: 1.2rem; }
+      .general .principalContactanos .informacion iframe {
+        margin-top: 5px;
+        border: 4px solid #ffc90e; }
     .general .principalContactanos .formulario h2 {
-      color: #f5f5dc;
+      color: #FFF8DC;
       font-family: "Open Sans", sans-serif;
       text-align: center;
       align-self: center;
-      margin: 10px 0px 20px 0px; }
+      margin: 5px 0px 20px 0px; }
     .general .principalContactanos .formulario form {
       display: flex;
       flex-direction: column;
@@ -276,9 +375,9 @@
         font-family: "Open Sans", sans-serif;
         font-size: 0.9rem;
         height: 40px;
-        width: 80vw;
+        width: 80%;
         margin-bottom: 10px;
-        background-color: #f5f5dc;
+        background-color: #FFF8DC;
         border: 0px;
         padding-left: 5px; }
       .general .principalContactanos .formulario form textarea {
@@ -287,20 +386,32 @@
         height: 100px;
         width: 80vw;
         margin-bottom: 10px;
-        background-color: #f5f5dc;
+        background-color: #FFF8DC;
         border: 0px;
         padding-left: 5px;
-        padding-top: 5px; }
+        padding-top: 5px;
+        resize: none; }
       .general .principalContactanos .formulario form .btnSend {
-        width: 50vw;
-        padding-left: 0px; }
+        width: 30%;
+        padding-left: 0px;
+        margin-bottom: 20px;
+        color: #FFF8DC;
+        background-color: #7b9a57;
+        border: 2px solid #FFF8DC;
+        border-radius: 3px;
+        transition: 0.4s; }
+      .general .principalContactanos .formulario form .btnSend:hover {
+        background-color: #FFF8DC;
+        color: #7b9a57;
+        cursor: pointer; }
   .general .footer {
     grid-column: 1 / 13;
     grid-row: 12 / 13;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    z-index: 2; }
+    z-index: 2;
+    border-top: 8px solid #ffc90e; }
     .general .footer .fa {
       text-decoration: none;
       color: #7b9a57;
@@ -314,3 +425,200 @@
   .general ::selection {
     color: #ffc90e;
     background: transparent; }
+
+@media (min-width: 550px) {
+  .general .principal__texto {
+    width: 50%; }
+  .general .principal .botones {
+    justify-content: center; }
+    .general .principal .botones button {
+      margin: 0px 5px 0px 5px;
+      width: 25%; } }
+
+@media (min-width: 600px) {
+  .general .principalQuienesSomos .bioTitulo {
+    grid-column: 2 / 10;
+    grid-row: 2 / 4;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center; }
+    .general .principalQuienesSomos .bioTitulo .contenedorImagenPerfil {
+      align-self: center; }
+      .general .principalQuienesSomos .bioTitulo .contenedorImagenPerfil img {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 125px;
+        height: 125px;
+        margin-right: 40px; } }
+
+@media (min-width: 1024px) {
+  .general .header #menuToggle {
+    top: 60px;
+    left: 20px; }
+  .general .header #menu {
+    margin: -110px 0px 0px -100px; }
+  .general .header #menu li {
+    margin-left: 40px; }
+  .general .principal__texto {
+    grid-column: 2 / 4;
+    grid-row: 1 / 10;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 1px;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(1.5px);
+    background-color: #FFF8DC;
+    padding: 10px; }
+    .general .principal__texto h1 {
+      font-family: "Open Sans", sans-serif;
+      color: #7b9a57;
+      font-size: 5rem;
+      line-height: 5rem;
+      text-align: left;
+      margin-left: 5%; }
+    .general .principal__texto h2 {
+      font-family: "Open Sans", sans-serif;
+      color: #7b9a57;
+      font-size: 2rem;
+      line-height: 2rem;
+      text-align: left;
+      margin-left: 5%; }
+  .general .principal .botones {
+    grid-column: 2 / 4;
+    grid-row: 10 / 11;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin: 15px 0px;
+    height: 50%;
+    width: 100%; }
+    .general .principal .botones button {
+      border-radius: 5px;
+      border: 0px solid #ffc90e;
+      font-family: "Open Sans", sans-serif;
+      backdrop-filter: blur(1.5px);
+      background-color: #FFF8DC;
+      font-size: 1rem;
+      width: 45%;
+      line-height: 0.8rem;
+      transition: 0.4s; }
+      .general .principal .botones button a {
+        text-decoration: none;
+        color: #7b9a57; }
+  .general .principalContactanos {
+    grid-column: 1 / 13;
+    grid-row: 3 / 13;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center; }
+    .general .principalContactanos h2 {
+      text-align: center; }
+    .general .principalContactanos section {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-content: center;
+      width: 90%;
+      margin: 10px; }
+      .general .principalContactanos section section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center; }
+        .general .principalContactanos section section section {
+          width: 30vw;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-content: center; }
+    .general .principalContactanos h2 {
+      color: #FFF8DC;
+      font-family: "Open Sans", sans-serif;
+      text-align: center;
+      align-self: center;
+      margin: 10px 0px 20px 0px; }
+    .general .principalContactanos .informacion-columna {
+      display: flex;
+      flex-direction: column; }
+    .general .principalContactanos .informacion-fila {
+      display: flex;
+      flex-direction: row; }
+    .general .principalContactanos .informacion {
+      align-items: center;
+      margin-bottom: 20px; }
+      .general .principalContactanos .informacion a {
+        color: #FFF8DC;
+        font-size: 0.8rem !important;
+        transition: 0.4s; }
+      .general .principalContactanos .informacion a:hover {
+        color: #ffc90e; }
+      .general .principalContactanos .informacion p {
+        color: #FFF8DC;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        margin-left: 7px; }
+      .general .principalContactanos .informacion iframe {
+        margin-top: 5px;
+        border: 4px solid #ffc90e;
+        width: 40vw;
+        height: 40vh; }
+    .general .principalContactanos .formulario h2 {
+      color: #FFF8DC;
+      font-family: "Open Sans", sans-serif;
+      text-align: center;
+      align-self: center;
+      margin: 5px 0px 20px 0px; }
+    .general .principalContactanos .formulario form {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .general .principalContactanos .formulario form input {
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.9rem;
+        height: 40px;
+        width: 30vw;
+        margin-bottom: 10px;
+        background-color: #FFF8DC;
+        border: 0px;
+        padding-left: 5px; }
+      .general .principalContactanos .formulario form textarea {
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.9rem;
+        height: 100px;
+        width: 30vw;
+        margin-bottom: 10px;
+        background-color: #FFF8DC;
+        border: 0px;
+        padding-left: 5px;
+        padding-top: 5px; }
+      .general .principalContactanos .formulario form .btnSend {
+        width: 30%;
+        padding-left: 0px;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        color: #FFF8DC;
+        background-color: #7b9a57;
+        border: 2px solid #FFF8DC;
+        border-radius: 3px;
+        transition: 0.4s; }
+      .general .principalContactanos .formulario form .btnSend:hover {
+        background-color: #FFF8DC;
+        color: #7b9a57;
+        cursor: pointer; } }
+
+@media (min-width: 1440px) {
+  .general .header #menuToggle {
+    top: 60px; }
+  .general .principal__texto h1 {
+    font-size: 7rem;
+    line-height: 6.5rem; }
+  .general .principal__texto h2 {
+    font-size: 2.3rem;
+    line-height: 2.3rem; } }

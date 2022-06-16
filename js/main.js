@@ -18,3 +18,10 @@ function cambiarColor()
         colorCambiado = 1;
     }
 }
+
+$(document).ready(function()
+{
+    let height = $(window).height();
+
+    $("#menu").height(height);
+});
