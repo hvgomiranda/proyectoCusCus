@@ -482,7 +482,7 @@
       .general .principalSustentables .sustentablesCuerpo .sustentablesImagen {
         margin-top: 20px; }
         .general .principalSustentables .sustentablesCuerpo .sustentablesImagen img {
-          height: 50vh;
+         
           width: 100%;
           margin: auto; }
       .general .principalSustentables .sustentablesCuerpo .sustentablesCuadro {
@@ -876,4 +876,3 @@
   .general .principal__texto h2 {
     font-size: 2.3rem;
     line-height: 2.3rem; } }
-git 
