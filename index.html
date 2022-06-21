@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cus Cus, servicio de comidas">
     <meta name="keywords" content="Cus Cus, Servicio de comidas, comidas, meriendas, viandas">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="./media/favicon.ico">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/24a39fb0b2.js" crossorigin="anonymous"></script>
-    <title>Página Base</title>
+    <title>Cus Cus</title>
 </head>
-<body class="general" >
+<body class="general fixed" >
     <!--Empieza el header con logo y menú-->
     <header class="header">
         <nav role="navigation">
@@ -39,24 +40,38 @@
         
     <!--Empieza el body-->
     <main class="principal">
-        <img class="principal__fondo" src="./media/imagenFondo2.jpeg" alt="">
+        <section class="principal__fondo">
+            <img class="imagenFondo" src="./media/imagen-fake1.jpeg" alt="Primera imagen de fondo">
+            <img class="imagenFondo" src="./media/imagen-fake2.jpg" alt="Segunda imagen de fondo">
+            <img class="imagenFondo" src="./media/imagen-fake3.jpg" alt="Tercera imagen de fondo">
+        </section>
+        <section class="principal__texto">
+            <h1 class="fade-in">CUS CUS</h1>
+            <h2 class="fade-in">servicio de viandas saludables</h2>
+        </section>
+        <section class="botones">
+            <button><a href="https://wa.me/+5491160430888" class="fade-in" target="_blank">contactanos</a></button>
+            <button><a href="./menu/menu.html" class="fade-in" target="_blank">nuestros menús</a></button>
+        </section>
     </main>
     <!--Termina el body-->
 
     <!--Empieza el footer-->
     <footer class="footer">
         <a href="https://www.instagram.com/hvgomiranda/"  target="_blank">
-            <i class="fa fa-instagram fa-2x"></i>
+            <i class="fa fa-instagram fa-2x fajs"></i>
         </a>
         <a href="https://wa.me/+5491160430888"  target="_blank">
-            <i class="fa fa-whatsapp fa-2x"></i>
+            <i class="fa fa-whatsapp fa-2x fajs"></i>
         </a>
     </footer>
     <!--Termina el footer-->
 
     <!--JS y Bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./js/caoursel.js"></script>
     <!--JS y Bootstrap-->
 </body>
 </html>
