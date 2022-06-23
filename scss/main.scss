@@ -1,7 +1,7 @@
 //npm run watch-css
-$mainColor: #7b9a57;
+$mainColor: rgb(123, 154, 87);
 $secondaryColor: #ffc90e;
-$whiteColor: #FFF8DC;
+$whiteColor: rgb(255, 248, 219);
 $mainFont: 'Open Sans', sans-serif;
 *
 {
@@ -14,6 +14,11 @@ $mainFont: 'Open Sans', sans-serif;
 {
     overflow-x: hidden;
     overflow-y: hidden;
+}
+
+.fixed-x
+{
+    overflow-x: hidden;
 }
 
 .general
@@ -141,6 +146,7 @@ $mainFont: 'Open Sans', sans-serif;
             list-style-type: none;
             -webkit-font-smoothing: antialiased;
             
+            
             transform-origin: 0% 0%;
             transform: translate(-100%, 0);
             
@@ -149,8 +155,9 @@ $mainFont: 'Open Sans', sans-serif;
 
         #menu li
         {
-            padding: 15px 0;
-            font-size: 1.7rem;
+            z-index: 4;
+            padding: 20px 0;
+            font-size: 1.6rem;
             font-family: $mainFont;
             color: $whiteColor;
         }
@@ -164,26 +171,42 @@ $mainFont: 'Open Sans', sans-serif;
         {
             grid-column: 5 / 9;
             z-index: 1;
-            align-self: center;
-            justify-self: center;
-            width: 150px;
-            height: 100px;
-            
-            img
-            {
-                width: 100%;
-                height: 100%;
-            }
 
+            width: 30vw;
+            height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            
             .logoSVG
             {
                 transition: 0.4s;
-                filter: invert(56%) sepia(19%) saturate(809%) hue-rotate(45deg) brightness(97%) contrast(91%);
-                
+                filter: "invert(91%) sepia(19%) saturate(196%) hue-rotate(22deg) brightness(106%) contrast(92%)";
+
                 /*&:hover
                 {
                     filter: invert(90%) sepia(22%) saturate(4879%) hue-rotate(349deg) brightness(102%) contrast(101%);
                 }*/
+            }
+
+            #SvgjsSvg1001
+            {
+                transform: scale(1.8, 2.1);
+            }
+
+            #SvgjsG1008
+            {
+                transition: 0.4s;
+                
+            }
+            .colorChanged
+            {
+                transition: 0.4s;
+            }
+            .strokeChanged
+            {
+                transition: 0.3s;
             }
         }
     }
@@ -220,7 +243,7 @@ $mainFont: 'Open Sans', sans-serif;
             border-radius: 5px;
             width: 100%;
             backdrop-filter: blur(1.5px);
-            background-color: $whiteColor;
+            background-color: rgba(255, 248, 219, 0.7);
             padding: 10px;
             h1
             {
@@ -280,7 +303,7 @@ $mainFont: 'Open Sans', sans-serif;
                 border: 0px solid $secondaryColor; 
                 font-family: $mainFont;
                 backdrop-filter: blur(1.5px);
-                background-color: $whiteColor;
+                background-color: rgba(255, 248, 219, 0.7);
                 font-size: 1rem;
                 width: 45%;
                 line-height: 0.8rem;
@@ -295,7 +318,6 @@ $mainFont: 'Open Sans', sans-serif;
             button:hover
             {
                 background-color: $mainColor;
-                border: 2px solid $whiteColor;
                 a
                 {
                     color: $whiteColor;
@@ -693,10 +715,39 @@ $mainFont: 'Open Sans', sans-serif;
 }
 
 //media queries
+@media(min-width: 390px)
+{
+    .general
+    {
+        .header
+        {
+            #SvgjsSvg1001
+            {
+                transform: scale(1.7);
+            }
+        }
+    }
+}
+
+@media(min-width: 500px)
+{
+    .general
+    {
+        .header
+        {
+            #SvgjsSvg1001
+            {
+                transform: scale(1.5);
+            }
+        }
+    }
+}
+
 @media(min-width: 550px)
 {
     .general
     {
+
         .principal
         {
             &__texto
@@ -755,7 +806,6 @@ $mainFont: 'Open Sans', sans-serif;
 }
 
 
-
 @media(min-width: 1024px)
 {   
     .general
@@ -789,11 +839,11 @@ $mainFont: 'Open Sans', sans-serif;
                 flex-direction: column;
                 justify-content: space-around;
                 //border: 1px solid $secondaryColor;
-                border-radius: 1px;
+                border-radius: 3px;
                 width: 100%;
                 height: 100%;
                 backdrop-filter: blur(1.5px);
-                background-color: $whiteColor;
+                background-color: rgba(255, 248, 219, 0.7);
                 padding: 10px;
                 h1
                 {
@@ -801,8 +851,8 @@ $mainFont: 'Open Sans', sans-serif;
                     color: $mainColor;
                     font-size: 5rem;
                     line-height: 5rem;
-                    text-align: left;
-                    margin-left: 5%;
+                    text-align: center;
+                    
                 }
                 h2
                 {
@@ -810,8 +860,7 @@ $mainFont: 'Open Sans', sans-serif;
                     color: $mainColor;
                     font-size: 2rem;
                     line-height: 2rem;
-                    text-align: left;
-                    margin-left: 5%;
+                    text-align: center;
                 }
             }
             .botones
@@ -831,7 +880,7 @@ $mainFont: 'Open Sans', sans-serif;
                     border: 0px solid $secondaryColor; 
                     font-family: $mainFont;
                     backdrop-filter: blur(1.5px);
-                    background-color: $whiteColor;
+                    background-color: rgba(255, 248, 219, 0.7);
                     font-size: 1rem;
                     width: 45%;
                     line-height: 0.8rem;
