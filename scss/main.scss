@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //npm run watch-css
 $mainColor: rgb(123, 154, 87);
 $secondaryColor: #ffc90e;
@@ -15,6 +14,10 @@ $mainFont: 'Open Sans', sans-serif;
 {
     overflow-x: hidden;
     overflow-y: hidden;
+}
+
+.toast{
+    font-family: $mainFont;
 }
 
 .fixed-x
@@ -408,7 +411,6 @@ $mainFont: 'Open Sans', sans-serif;
                  img{
                      
                      
-                         height: 50vh;
                          width: 100%;
                          margin: auto;
                      }
@@ -1084,11 +1086,3 @@ $mainFont: 'Open Sans', sans-serif;
         }
     }
 }
-=======
-$mainColor: rgb(123,154,87);
-$secondaryColor: rgb(207,192,87); //buscar color secundario
-$whiteColor: white;
-$titleFont: 'Kalam', cursive; //buscar tipografías ideales
-$mainFont: 'Didact Gothic', sans-serif;
-
->>>>>>> main

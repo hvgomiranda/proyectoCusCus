@@ -15,5 +15,20 @@ async function handleSubmit(event)
     if(response.ok)
     {
         this.reset;
-        alert("¡Gracias por contactarnos!");
+        alertMsg("¡Gracias por contactarnos!", "green");
     }
+}
+
+function alertMsg(message, color){
+    Toastify({
+        text: message,
+        style: {
+            background: color,
+        },
+        duration: 3000,
+        offset: {
+            y: 100
+        },
+        className: "toast",
+        }).showToast();
+}
